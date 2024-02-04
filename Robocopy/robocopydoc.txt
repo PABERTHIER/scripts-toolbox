@@ -1,0 +1,30 @@
+robocopy C:\source\folder\path\ D:\destination\folder\path\ /S /E /Z /ZB /R:5 /W:5 /TBD /NP /V /MT:32
+
+/XC :: eXclude Changed files.
+/XN :: eXclude Newer files.
+/XO :: eXclude Older files.
+/XX :: eXclude eXtra files and directories.
+/XL :: eXclude Lonely files and directories.
+/IS :: Include Same files.
+/IT :: Include Tweaked files.
+/S — Copy subdirectories, but not empty ones.
+/E — Copy Subdirectories, including empty ones.
+/Z — Copy files in restartable mode.
+/ZB — Uses restartable mode. If access is denied, use backup mode.
+/R:5 — Retry 5 times (you can specify a different number, the default is 1 million).
+/W:5 — Wait 5 seconds before retrying (you can specify a different number, the default is 30 seconds).
+/TBD — Wait for share names To Be Defined (retry error 67).
+/NP — No Progress – don’t display percentage copied.
+/V — Produce verbose output, showing skipped files.
+/MT:32 — Do multi-threaded copies with n threads (default is 8).
+/mir — Mirrors a directory tree (equivalent to /e plus /purge).
+Using this option with the /e option and a destination directory, overwrites the destination directory security settings.
+
+/MAX:n :: MAXimum file size - exclude files bigger than n bytes.
+/MIN:n :: MINimum file size - exclude files smaller than n bytes.
+
+/MAXAGE:n :: MAXimum file AGE - exclude files older than n days/date.
+/MINAGE:n :: MINimum file AGE - exclude files newer than n days/date.
+/MAXLAD:n :: MAXimum Last Access Date - exclude files unused since n.
+/MINLAD:n :: MINimum Last Access Date - exclude files used since n.
+(If n < 1900 then n = n days, else n = YYYYMMDD date).
